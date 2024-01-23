@@ -13,7 +13,10 @@ const mongoose = require("mongoose");
 
 var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/login');
+var logoutRouter = require('./routes/logout');
 var signupRouter = require('./routes/signup');
+var messageRouter = require('./routes/messageWindow');
+
 require('dotenv').config();
 const app = express();
 
@@ -38,7 +41,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/login', loginRouter);
+app.use('/logout', logoutRouter);
 app.use('/signup', signupRouter);
+app.use('/messageWindow', messageRouter);
 
 app.use(function(req, res, next) {
   next(createError(404));

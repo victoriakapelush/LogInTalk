@@ -22,7 +22,7 @@ const authenticatedUser = async (req, res, next) => {
       });
   
       const result = await user.save();
-      res.redirect("/");
+      res.redirect("/messageWindow");
   
       // Now, when comparing passwords:
       const match = await bcrypt.compare(req.body.password, user.password);

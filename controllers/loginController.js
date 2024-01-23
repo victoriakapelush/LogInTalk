@@ -5,7 +5,7 @@ const loginController = (req, res, next) => {
   };
 
   const authenticateLogin = passport.authenticate('local', {
-    successRedirect: '/',
+    successRedirect: '/messageWindow',
     failureRedirect: '/',
     failureFlash: true
   });
