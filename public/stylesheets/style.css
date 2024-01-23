@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Rubik+Burned&display=swap');
+
+:root {
+  --background: #282828;
+  --text: #e3e3e3;
+  --text2: #ffffff;
+  --text3: #848484;
+  --border: #434343;
+  --primary: #ff2870;
+  --shadow: rgba(0, 0, 0, 0.204);
+  --admin: #1e96c9;
+  --superuser: #82c91e;
+  --user: #ff2870;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  justify-content: space-between;
+  height: auto;
+  border-bottom: 1px solid var(--border);
+  padding: .5rem 1rem;
+  margin: 0 0;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0 0;
+}
+
+header div {
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+body {
+  height: 100%;
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  margin: 0 0 0 0;  
+}
+
+.link {
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  padding: .5rem 1rem;
+  width: fit-content;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+.link:hover {
+  background-color: var(--primary);
+  color: var(--background);
+}
+
+main {
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo {
+  width: 15rem;
+  height: auto;
+}
+
+.linkMain {
+  width: 10rem;
+  text-align: center;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+footer {
+  justify-content: center;
+  padding: 1rem 0 1rem 0;
+  bottom: 0;
+  clear: both;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* LOGIN PAGE */
+
+.logInForm {
+  border: 1px solid var(--border);
+  align-items: center;
+  justify-content: space-around;
+  width:fit-content;
+  height: auto;
+  padding: 3rem 4rem;
+  gap: 2rem;
+  margin-top: 7%;
+}
+
+.logInInput {
+  font-size: 1rem;
+  width: 25rem;
+  height: 2rem;
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  font-weight: lighter;
+  padding: .3rem 0 .3rem .5rem;
+  caret-color: var(--text);
+}
+
+button.link {
+  background-color: var(--background);
+  width: 100%;
+  font-size: 1rem;
+}
+
+form {
+  gap: 1rem;
+}

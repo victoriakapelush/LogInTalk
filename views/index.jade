@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  header.flex-row 
+    div.flex-row
+      a(href="/") 
+        h1 LogInTalk
+      a(href="/") 
+        img(src="../images/icon.png", alt="icon man")
+    div.flex-row 
+      a.link(href="/login") Log in 
+      a.link(href="/signup") Sign up  
+  main.flex-column 
+    img.logo(src="../images/logo.png", alt="logo man")
+    h1 You must be logged in to talk.
+    div.flex-column 
+      a.link.linkMain(href="/login") Log in 
+      a.link.linkMain(href="/signup") Sign up 
+  footer.flex-row 
+    a(href="https://victoriakapelush.com" target="_blank") Designed and developed by Victoria Kapelush 

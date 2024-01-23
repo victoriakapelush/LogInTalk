@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  header.flex-row 
+    div.flex-row
+      a(href="/") 
+        h1 LogInTalk
+      a(href="/") 
+        img(src="../images/icon.png", alt="icon man")
+    div.flex-row 
+      a.link(href="/login") Log in 
+      a.link(href="/signup") Sign up  
+  main.flex-column 
+    div.logInForm.flex-column 
+        h1 Log In
+        form.flex-column(method="post" action="/login")
+            input.logInInput(type="text" placeholder="username" name="username")
+            input.logInInput(type="text" placeholder="password", name="password")
+            button.link Log in 
+  footer.flex-row 
+    a(href="https://victoriakapelush.com" target="_blank") Designed and developed by Victoria Kapelush 
