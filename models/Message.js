@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
 const { DateTime } = require("luxon");
+const Schema = mongoose.Schema;
 
 const MessageSchema = new mongoose.Schema({
-  username: { type: String, required: true },
-  time: { type: String, required: true, default: DateTime.local().toISO() },
-  text: { type: String, required: true }
+  user: { type: Schema.Types.ObjectId, ref: 'User' },
+  time: { type: String, default: Date.now },
+  message: { type: String }
 });
 
 MessageSchema.virtual("formattedTime").get(function () {

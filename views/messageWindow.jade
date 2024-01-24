@@ -11,6 +11,10 @@ block content
       a.link(href="/logout") Log out 
       a.link(href="/signup") Sign up  
   main.flex-column 
-    
-  footer.flex-row 
-    a(href="https://victoriakapelush.com" target="_blank") Designed and developed by Victoria Kapelush 
+    each message in messages 
+        p User Name: #{message.user} 
+        p Date: #{message.formattedTime}
+        p Message: #{message.message}
+    form(method='POST', action='/messageWindow')
+        input(type="text" placeholder="Type your message here" name="message")
+        button(type="submit") Submit
