@@ -30,7 +30,8 @@ app.set('view engine', 'jade');
 
 initializePassport(passport);
 
-app.use(session({ secret: process.env.SESSION_SECRET || "cats", resave: false, saveUninitialized: true }));app.use(passport.initialize());
+app.use(session({ secret: 'cats', resave: false, saveUninitialized: false }));
+app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.urlencoded({ extended: false }));
 

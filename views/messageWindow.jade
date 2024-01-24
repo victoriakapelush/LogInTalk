@@ -12,7 +12,7 @@ block content
       a.link(href="/signup") Sign up  
   main.flex-column 
     each message in messages 
-        p User Name: #{message.user} 
+        p User: #{message.user}
         p Date: #{message.formattedTime}
         p Message: #{message.message}
     form(method='POST', action='/messageWindow')

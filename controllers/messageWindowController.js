@@ -3,9 +3,11 @@ const User = require('../models/user');
 
 const messageWindowController = async (req, res, next) => {
   try {
-    const messages = await Message.find().populate().exec();
-    const users = await User.find().exec();
-    res.render('messageWindow', { title: "Let's Talk", messages, users });
+    const [currentUser, messages] = await Promise.all([
+      User.findById(req.body._id),
+      Message.find().populate('user').sort(),
+    ]);
+    res.render('messageWindow', { messages, currentUser });
   } catch (err) {
     console.error(err);
     res.status(500).send('Internal Server Error');
@@ -13,11 +15,11 @@ const messageWindowController = async (req, res, next) => {
 };
 
 const postMessage = async (req, res, next) => {
-  const userId = req.body.userId; 
-  const newMessage = new Message({
-    user: userId,
-    message: req.body.message
-  });
+  const currentUser = await User.findById(req.body._id);
+    const newMessage = new Message({
+      user: currentUser,
+      message: req.body.message,
+    });
 
   try {
     await newMessage.save();
