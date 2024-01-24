@@ -117,6 +117,7 @@ footer {
   font-weight: lighter;
   padding: .3rem 0 .3rem .5rem;
   caret-color: var(--text);
+  color: var(--text);
 }
 
 button.link {
@@ -127,4 +128,68 @@ button.link {
 
 form {
   gap: 1rem;
+}
+
+/* MESSAGE SCREEN */
+
+.message-container {
+  border: 1px solid var(--border);
+  width: 95%;
+  margin-top: 1rem;
+  padding: 1rem 1rem;
+}
+
+.name-date-container {
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.time {
+  font-style: italic;
+  font-size: .8rem;
+}
+
+.username {
+  color: var(--user);
+  font-size: 1.2rem;
+  font-style: italic;
+  padding-bottom: .4rem;
+}
+
+p {
+  margin: 0 0;
+}
+
+.form-message-submit {
+  width: 95%;
+  height: 5rem;
+  border: 1px solid var(--border);
+  background-color: var(--background);
+  bottom: 0;
+  position: absolute;
+  padding: .5rem 1rem;
+}
+
+.input-message-submit {
+  width: 100%;
+  height: 3rem;
+  border: 1px solid var(--superuser);
+  border-radius: 20px;
+  background-color: var(--background);
+  font-size: 1rem;
+  color: var(--text);
+  padding-left: 1rem;
+}
+
+#link-submit-button {
+  width: fit-content;
+  font-size: 1.2rem;
+  color: var(--superuser);
+  border: 1px solid var(--superuser);
+}
+
+#link-submit-button:hover {
+  color: var(--background);
+  border: 1px solid var(--superuser);
+  background-color: var(--superuser);
 }

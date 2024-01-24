@@ -9,5 +9,10 @@ const loginController = (req, res, next) => {
     failureRedirect: '/',
     failureFlash: true
   });
+
+  const handleInvalidLogin = (req, res, next) => {
+    req.flash('error', 'Invalid username or password');
+    res.redirect('/');
+  };
   
-  module.exports = { loginController, authenticateLogin };
+  module.exports = { loginController, authenticateLogin, handleInvalidLogin };

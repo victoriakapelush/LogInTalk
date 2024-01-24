@@ -3,6 +3,10 @@ var express = require('express');
 var path = require('path');
 const session = require("express-session");
 const passport = require("passport");
+const LocalStrategy = require("passport-local").Strategy;
+const bcrypt = require("bcryptjs");
+const User = require('./models/user');
+const flash = require('express-flash');
 
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -28,15 +32,14 @@ db.on('error', console.error.bind(console, 'mongo connection error'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-initializePassport(passport);
-
+app.use(flash());
 app.use(session({ secret: 'cats', resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(express.urlencoded({ extended: false }));
 
 app.use(logger('dev'));
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 

@@ -4,6 +4,6 @@ const { messageWindowController, postMessage } = require('../controllers/message
 
 router.get("/", messageWindowController);
 
-router.post('/', postMessage);
+router.post("/", postMessage);
 
 module.exports = router;

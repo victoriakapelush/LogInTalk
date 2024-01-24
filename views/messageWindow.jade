@@ -11,10 +11,12 @@ block content
       a.link(href="/logout") Log out 
       a.link(href="/signup") Sign up  
   main.flex-column 
-    each message in messages 
-        p User: #{message.user}
-        p Date: #{message.formattedTime}
-        p Message: #{message.message}
-    form(method='POST', action='/messageWindow')
-        input(type="text" placeholder="Type your message here" name="message")
-        button(type="submit") Submit
+    each message in messages
+      div.message-container
+        div.name-date-container.flex-row
+          p.username #{message.user ? message.user.username : 'Unknown User'}
+          p.time #{message.formattedTime}
+        p #{message.message}
+    form.form-message-submit.flex-row(method='POST', action='/messageWindow')
+      input.input-message-submit(type="text" placeholder="Type your message here" name="message")
+      button.button-message-submit.link#link-submit-button(type="submit") Submit
